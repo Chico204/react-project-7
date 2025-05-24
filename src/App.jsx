@@ -20,13 +20,22 @@ export default function App() {
     }, [])
     const {name,title, quote,image} = testimonials[index]
  return (
-  <div className="flex flex-col items-center judtify-center h-screen bg-gray-100 text-center p-4 ">
+  <div className="flex flex-col items-center judtify-center h-screen bg-gray-100 text-center p-4 pt-10 ">
     <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-purple-300 shadow-lg">
 <img src={image} alt={name} className="w-full h-full object-cover" />
     </div>
     <h2 className="text-xl font-semi-bold text-purple-600 uppercase">{name}</h2>
     <p className="text-gray-800 mb-4">{title}</p>
     <p className="max-w-xl text-gray-600 mb-8 px-4">{quote}</p>
+
+    <div className="flex space-x-30 mt-6 ">
+        <button onClick={prevSlide} className="p-3 rounded bg-gray-500 text white hover:bg-purple-500 transition">
+       &#8592;
+        </button>
+         <button onClick={nextSlide} className="p-3 rounded bg-gray-500 text white hover:bg-purple-500 transition">
+       &#8594;
+        </button>
+    </div>
   </div>
  )
 }
